@@ -664,7 +664,7 @@ class SysLanguage extends \DAL\DalSlim {
                 where a.deleted =0 AND a.active = 0 AND 
                     a.language_main_code = '" . $params['language_code'] . "'               
                 LIMIT 1                ";
-           //  echo debugPDO($sql, $params);   
+         //     echo debugPDO($sql, $params);   
             $statement = $pdo->prepare($sql);
             $statement->execute();
             $result = $statement->fetchAll(\PDO::FETCH_ASSOC); 

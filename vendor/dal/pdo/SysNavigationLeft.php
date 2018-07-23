@@ -559,15 +559,18 @@ class SysNavigationLeft extends \DAL\DalSlim {
             
             $languageCode = 'tr';
             $languageIdValue = 647;
+         
             if (isset($params['language_code']) && $params['language_code'] != "") {
                 $languageCode = $params['language_code'];
             }
+            
             $languageCodeParams = array('language_code' => $languageCode,);
             $languageId = $this->slimApp-> getBLLManager()->get('languageIdBLL');  
             $languageIdsArray = $languageId->getLanguageId($languageCodeParams);
             if (\Utill\Dal\Helper::haveRecord($languageIdsArray)) {
                 $languageIdValue = $languageIdsArray ['resultSet'][0]['id'];
             }    
+       //     print_r( $languageIdsArray  );  
             
             $sql = "
                 SELECT 
@@ -653,7 +656,7 @@ class SysNavigationLeft extends \DAL\DalSlim {
             //ORDER BY a.parent, a.z_index
             $statement = $pdo->prepare($sql);
    
-         //echo debugPDO($sql, $params);  
+        //  echo debugPDO($sql, $params);  
             $statement->execute();
             $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
             $errorInfo = $statement->errorInfo();

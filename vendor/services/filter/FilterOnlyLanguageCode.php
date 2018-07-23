@@ -26,7 +26,7 @@ class FilterOnlyLanguageCode implements \Zend\ServiceManager\FactoryInterface {
         // Create a filter chain and filter for usage
         $filterChain = new \Zend\Filter\FilterChain();
         $filterChain ->attach(new \Zend\Filter\Whitelist(array('list' => 
-                                                array('tr','de','ar','ru','zh','en','fa'))));
+                                                array('tr','de','ar','ru','zh','en','fa','af','zu'))));
         return $filterChain;
 
         

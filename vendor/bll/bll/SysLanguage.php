@@ -96,11 +96,17 @@ class SysLanguage extends \BLL\BLLSlim{
         return $resultSet['resultSet'];
     }
     
-    public function getLanguageId($params = array()) {
+  /*  public function getLanguageId($params = array()) {
         $DAL = $this->slimApp->getDALManager()->get('sysLanguagePDO');
         $resultSet = $DAL->getLanguageId($params);  
         return $resultSet['resultSet'];
     }
+    */ 
+    public function getLanguageId($params = array()) {
+        $DAL = $this->slimApp->getDALManager()->get('sysLanguagePDO');
+        return $DAL->getLanguageId($params);
+    }
+
      
     /**
      * Function to fill text on user interface layer

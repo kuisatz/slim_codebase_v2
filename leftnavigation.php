@@ -63,7 +63,7 @@ $app->get("/pkGetLeftMenu_leftnavigation/", function () use ($app ) {
         throw new Exception('rest api "pkGetLeftMenu_leftnavigation" end point, X-Public variable not found');
     $pk = $headerParams['X-Public'];    
     
-    
+ 
     $vLanguageCode = 'tr';
     if (isset($_GET['language_code'])) {
         $stripper->offsetSet('language_code', $stripChainerFactory->get(stripChainers::FILTER_ONLY_LANGUAGE_CODE, 
@@ -98,6 +98,8 @@ $app->get("/pkGetLeftMenu_leftnavigation/", function () use ($app ) {
     if ($stripper->offsetExists('a')) 
         {$vA = $stripper->offsetGet('a')->getFilterValue(); }     
     
+        
+ 
     $resDataMenu = $BLL->pkGetLeftMenu(array('parent' => $vParent,
                                             'language_code' => $vLanguageCode,                                             
                                             'm' => $vM,
